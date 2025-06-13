@@ -84,6 +84,8 @@ This project demonstrates:
 - CI-ready project structure
 
 ---
+The project was originally adapted from:
+Original Source: https://github.com/mdn/todo-react
 
 ## 📄 License
 This project is licensed under the MIT License.
