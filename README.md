@@ -1,46 +1,89 @@
-# todo-react
+# Todo App – SVVT Project
 
-Sample todo app built with the React/ReactDOM framework. For the accompanying documentation, see
-[Understanding client-side JavaScript frameworks
-: React tutorials](https://wiki.developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks#React_tutorials).
+This is a simple **React-based Todo application** developed for the *Software Verification, Validation, and Testing (SVVT)* course project. It showcases core testing practices using modern JavaScript tools, and it is deployed using GitHub Pages.
 
-For the live version, see https://mdn.github.io/todo-react/.
+ **Live Demo:** [https://ajlaxo.github.io/todo-svvt/](https://ajlaxo.github.io/todo-svvt/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Getting started
-
-To get this app running locally, you'll need to have [Node.js](https://nodejs.org/en/) and [Yarn](https://yarnpkg.com/getting-started/install) installed on your machine.
-In the project directory, you can run:
-
-```bash
-yarn && yarn start
+## Project Structure
+```
+todo-react/
+├── public/
+├── src/
+│   ├── App.jsx
+│   ├── App.test.jsx   <-- Unit & UI tests
+│   ├── index.jsx
+│   └── components/    <-- UI components
+├── dist/              <-- Production build
+├── package.json
+├── vite.config.js
+└── README.md
 ```
 
-More information about the available commands can be found in the [Contributing](CONTRIBUTING.md) guide.
+---
 
-## Learn More
+##  Setup Instructions
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+# Clone the repository
+git clone https://github.com/ajlaxo/todo-svvt.git
+cd todo-svvt
 
-The following sections are recommended:
+# Install dependencies
+npm install
 
-- [Code Splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-- [Analyzing the Bundle Size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-- [Making a Progressive Web App](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-- [Advanced Configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-- [Deployment](https://facebook.github.io/create-react-app/docs/deployment)
-- [npm run build fails to minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Run the development server
+npm run dev
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Run tests
+npx vitest run
 
-## Contributing
+# Build for production
+npm run build
 
-Our project welcomes contributions from any member of our community.
-To get started contributing, please see our [Contributor Guide](CONTRIBUTING.md).
+# Deploy to GitHub Pages
+npm run deploy
+```
 
-By participating in and contributing to our projects and discussions, you acknowledge that you have read and agree to our [Code of Conduct](CODE_OF_CONDUCT.md).
+---
 
-## License
+## Testing Details
 
-This project is licensed under the [LICENSE](LICENSE).
+This project includes **unit and UI tests** using **Vitest** and **React Testing Library**.
+
+### Tests Included:
+- Adding a new task
+- Deleting a task
+- Toggling task completion
+- Filtering completed tasks
+
+### Run Tests:
+```bash
+npx vitest run
+```
+
+> All tests are located in `src/App.test.jsx`
+
+---
+
+## Tech Stack
+- **React** (with Vite)
+- **Vitest** (for testing)
+- **React Testing Library**
+- **GitHub Pages** (for deployment)
+
+---
+
+## Learning Outcomes
+This project demonstrates:
+- Clean component-based architecture in React
+- Proper testing of UI behavior
+- Test-driven development practices
+- Static analysis using ESLint
+- CI-ready project structure
+
+---
+
+## 📄 License
+This project is licensed under the MIT License.
