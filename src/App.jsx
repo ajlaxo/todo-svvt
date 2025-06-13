@@ -21,15 +21,13 @@ const FILTER_MAP = {
 const FILTER_NAMES = Object.keys(FILTER_MAP);
 
 function App(props) {
-  const [tasks, setTasks] = useState(props.tasks);
+  // FIX: fallback to empty array if props.tasks is undefined
+  const [tasks, setTasks] = useState(props.tasks || []);
   const [filter, setFilter] = useState("All");
 
   function toggleTaskCompleted(id) {
     const updatedTasks = tasks.map((task) => {
-      // if this task has the same ID as the edited task
       if (id === task.id) {
-        // use object spread to make a new obkect
-        // whose `completed` prop has been inverted
         return { ...task, completed: !task.completed };
       }
       return task;
@@ -44,19 +42,16 @@ function App(props) {
 
   function editTask(id, newName) {
     const editedTaskList = tasks.map((task) => {
-      // if this task has the same ID as the edited task
       if (id === task.id) {
-        // Copy the task and update its name
         return { ...task, name: newName };
       }
-      // Return the original task if it's not the edited task
       return task;
     });
     setTasks(editedTaskList);
   }
 
   const taskList = tasks
-    ?.filter(FILTER_MAP[filter])
+    .filter(FILTER_MAP[filter])
     .map((task) => (
       <Todo
         id={task.id}
@@ -91,7 +86,7 @@ function App(props) {
 
   useEffect(() => {
     if (tasks.length < prevTaskLength) {
-      listHeadingRef.current.focus();
+      listHeadingRef.current?.focus();
     }
   }, [tasks.length, prevTaskLength]);
 
